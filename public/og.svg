@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="KAI Kreator - Gestao editorial feita por quem publica todo santo dia">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="rgba(10,10,10,0.08)" />
+    </pattern>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c6ff3d" />
+      <stop offset="100%" stop-color="#c6ff3d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Paper background -->
+  <rect width="1200" height="630" fill="#f5f3ee" />
+  <rect width="1200" height="630" fill="url(#dots)" />
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="64" fill="#0a0a0a" />
+  <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" fill="#f5f3ee" letter-spacing="4">
+    <text x="48" y="40">KALEIDOS.LABS / EDITORIAL OS / V2.0</text>
+    <text x="1152" y="40" text-anchor="end">KAI.KREATOR</text>
+  </g>
+
+  <!-- Logo block -->
+  <g transform="translate(48, 104)">
+    <rect x="0" y="0" width="56" height="56" fill="#0a0a0a" />
+    <text x="28" y="40" font-family="Space Grotesk, Inter, sans-serif" font-size="32" font-weight="900" fill="#c6ff3d" text-anchor="middle">K</text>
+    <text x="72" y="36" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="4" fill="#0a0a0a">KAI KREATOR</text>
+  </g>
+
+  <!-- Big headline -->
+  <g font-family="Space Grotesk, Inter, sans-serif" font-weight="900" fill="#0a0a0a">
+    <text x="48" y="280" font-size="112" letter-spacing="-4">Gestao editorial</text>
+    <text x="48" y="380" font-size="112" letter-spacing="-4">feita por <tspan fill="#0a0a0a" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="400">quem publica</tspan></text>
+    <text x="48" y="480" font-size="112" letter-spacing="-4">todo <tspan font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="400">santo</tspan> dia.</text>
+  </g>
+
+  <!-- Accent highlight under "quem publica" -->
+  <rect x="335" y="355" width="680" height="24" fill="#c6ff3d" opacity="0.85" />
+
+  <!-- Bottom bar -->
+  <rect x="0" y="566" width="1200" height="64" fill="#0a0a0a" />
+  <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="14" fill="#f5f3ee" letter-spacing="4">
+    <text x="48" y="606">PAUTA / BRIEFINGS / APROVACOES / ANALYTICS / IA</text>
+    <text x="1152" y="606" text-anchor="end">KALEIDOS.COM.BR</text>
+  </g>
+</svg>
