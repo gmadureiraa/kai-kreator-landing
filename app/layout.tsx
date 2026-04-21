@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://kai-kreator.kaleidos.com.br";
+const siteUrl = "https://kai.kaleidos.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
