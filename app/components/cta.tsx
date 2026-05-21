@@ -3,35 +3,31 @@ const CONTACT_HREF =
 
 export function Cta() {
   return (
-    <section className="relative overflow-hidden bg-ink text-paper border-b border-ink">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-20 md:py-36 relative">
-        <div className="font-mono text-[11px] md:text-xs uppercase tracking-[0.22em] text-paper/60">
-          / 06 &middot; Chegou aqui
-        </div>
-        <h2 className="headline-kern mt-6 font-black text-[13vw] md:text-[clamp(72px,10vw,192px)] leading-[0.9]">
-          Para de{" "}
-          <span className="serif-italic font-normal">terceirizar</span>
-          <br />
-          o caos.{" "}
-          <span className="u-accent text-ink">Conversa</span> com
-          <br />a gente.
-        </h2>
+    <section id="contato" className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
+      <div className="section-shell">
+        <div className="relative overflow-hidden rounded-[8px] border border-line bg-[linear-gradient(135deg,#fff_0%,#f6f9ff_48%,#fff_100%)] px-6 py-12 text-center shadow-[0_30px_100px_rgba(22,38,66,0.1)] sm:px-10 lg:py-16">
+          <div
+            className="pointer-events-none absolute inset-x-10 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--blue),var(--green),var(--coral),transparent)]"
+            aria-hidden
+          />
+          <div className="section-eyebrow">Proximo ciclo</div>
+          <h2 className="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+            Coloque sua operacao editorial em modo fabrica.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted">
+            Se o conteudo ja e parte central do seu negocio, o KAI pode virar o
+            lugar onde pauta, producao, aprovacao e aprendizado finalmente se
+            encontram.
+          </p>
 
-        <div className="mt-12 md:mt-16 flex flex-wrap items-center gap-4 md:gap-6">
-          <a
-            href={CONTACT_HREF}
-            className="group inline-flex items-center gap-3 h-14 md:h-16 px-6 md:px-8 bg-accent text-accent-ink font-mono text-xs md:text-sm uppercase tracking-[0.22em] border border-accent hover:bg-paper hover:border-paper transition-colors"
-          >
-            Entrar em contato
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-1"
-            >
-              &rarr;
-            </span>
-          </a>
-          <div className="font-mono text-xs md:text-sm uppercase tracking-[0.22em] text-paper/60">
-            Resposta em ate um dia util
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href={CONTACT_HREF} className="button-primary">
+              Marcar uma conversa
+              <span aria-hidden>&rarr;</span>
+            </a>
+            <a href="mailto:ola@kaleidos.com.br" className="button-secondary">
+              ola@kaleidos.com.br
+            </a>
           </div>
         </div>
       </div>

@@ -1,59 +1,65 @@
-const ITEMS = [
-  {
-    quote:
-      "A gente tinha 11 planilhas compartilhadas. Hoje a gente tem o KAI aberto o dia inteiro. Parece obvio agora, nao parecia ha um ano.",
-    name: "Placeholder",
-    role: "Head de conteudo, marca parceira",
-    meta: "ed. a editar",
-  },
-  {
-    quote:
-      "A parte que mais me pegou foi ver o cliente aprovando na propria ferramenta. Sem print, sem pdf, sem dor.",
-    name: "Placeholder",
-    role: "Gestor editorial, agencia amiga",
-    meta: "ed. a editar",
-  },
+const METRICS = [
+  { value: "1.2k+", label: "pecas organizadas por mes" },
+  { value: "320", label: "aprovacoes por semana" },
+  { value: "07", label: "clientes ativos no fluxo" },
+];
+
+const LOGS = [
+  ["09:12", "Insight anexado ao cliente DEFIVERSO"],
+  ["10:04", "Roteiro derivado para Reels e Shorts"],
+  ["11:38", "Design enviado para aprovacao"],
+  ["14:20", "Cliente comentou no frame 03"],
+  ["16:45", "Post aprovado e agendado"],
 ];
 
 export function Testimonials() {
   return (
-    <section className="border-b border-ink bg-paper-soft">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-28">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10">
-          <div>
-            <div className="font-mono text-[11px] md:text-xs uppercase tracking-[0.22em] text-muted">
-              / 04 &middot; Quem ja usa
-            </div>
-            <h2 className="headline-kern mt-5 font-black text-5xl md:text-7xl lg:text-8xl">
-              Gente que <span className="serif-italic font-normal">publica.</span>
-            </h2>
-          </div>
-          <p className="max-w-md text-base md:text-lg text-muted">
-            Os depoimentos abaixo sao placeholders. Quando voce assinar a
-            proposta, a gente coloca o seu aqui.
+    <section className="bg-white py-16 sm:py-20 lg:py-28">
+      <div className="section-shell grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+        <div>
+          <div className="section-eyebrow">Operacao em tempo real</div>
+          <h2 className="mt-5 max-w-3xl text-balance text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+            Menos status meeting. Mais conteudo saindo.
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
+            O KAI deixa visivel o que entrou, o que esta sendo produzido, quem
+            precisa aprovar e quais aprendizados voltam para a pauta.
           </p>
+
+          <div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+            {METRICS.map((metric) => (
+              <div key={metric.label} className="rounded-[8px] border border-line bg-soft p-5">
+                <div className="text-4xl font-semibold text-ink">{metric.value}</div>
+                <div className="mt-2 text-sm leading-5 text-muted">{metric.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {ITEMS.map((t, i) => (
-            <figure
-              key={i}
-              className="relative border border-ink bg-paper p-8 md:p-10 flex flex-col gap-8"
-            >
-              <div
-                className="absolute -top-5 left-6 bg-accent text-accent-ink border border-ink px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em]"
-              >
-                {t.meta}
+        <div className="glass-panel overflow-hidden">
+          <div className="border-b border-line bg-white/72 px-5 py-4">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <div className="text-sm font-semibold text-ink">Live desk</div>
+                <div className="mt-1 text-xs font-medium text-muted">
+                  fila editorial sincronizada
+                </div>
               </div>
-              <blockquote className="serif-italic text-2xl md:text-4xl leading-tight text-ink">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="flex items-center justify-between pt-6 border-t border-ink/20 font-mono text-xs uppercase tracking-[0.22em] text-muted">
-                <span>{t.name}</span>
-                <span>{t.role}</span>
-              </figcaption>
-            </figure>
-          ))}
+              <div className="flex gap-1.5" aria-hidden>
+                <span className="h-2.5 w-2.5 rounded-full bg-coral" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green" />
+                <span className="h-2.5 w-2.5 rounded-full bg-blue" />
+              </div>
+            </div>
+          </div>
+          <div className="divide-y divide-line">
+            {LOGS.map(([time, log]) => (
+              <div key={log} className="flex items-center gap-4 px-5 py-4">
+                <span className="font-mono text-xs font-bold text-blue">{time}</span>
+                <span className="text-sm font-medium text-graphite">{log}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

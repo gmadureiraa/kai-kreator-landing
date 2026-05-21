@@ -1,88 +1,77 @@
 const FEATURES = [
   {
-    code: "F.01",
-    title: "Pauta editorial viva",
-    body: "Calendario semanal + mensal por cliente, por canal, por formato. Arrasta, filtra, reagenda. Todo mundo ve o mesmo. Sem export manual pra PDF nunca mais.",
-    spec: "Multi-canal",
+    step: "01",
+    title: "Radar de ideias",
+    body: "Captura sinais, referencias e temas recorrentes para alimentar a pauta antes da reuniao comecar.",
+    accent: "bg-blue",
   },
   {
-    code: "F.02",
-    title: "Briefings que nao se perdem",
-    body: "Cada post tem briefing com referencias, tom de voz, CTA, objetivo. Links pra arquivo, figma, canva, drive. Se o cliente mudou o rumo, o historico fica.",
-    spec: "Versionado",
+    step: "02",
+    title: "Briefing vivo",
+    body: "Tom de voz, objetivo, contexto, assets e historico de decisao no mesmo lugar que a equipe produz.",
+    accent: "bg-green",
   },
   {
-    code: "F.03",
-    title: "Aprovacoes sem WhatsApp",
-    body: "Cliente recebe link publico, aprova, pede ajuste, comenta frame por frame. Voce ve quem engasgou no fluxo antes de virar crise.",
-    spec: "Link publico",
+    step: "03",
+    title: "Linha criativa",
+    body: "Copy, roteiro, design e formatos derivados conectados como pecas de uma mesma ideia.",
+    accent: "bg-coral",
   },
   {
-    code: "F.04",
-    title: "Analytics que interessa",
-    body: "Metricas por conta, por canal, por serie. Dashboards que respondem: o que performou? onde estamos bottleneckando? qual cliente precisa de atencao?",
-    spec: "Dashboards",
+    step: "04",
+    title: "Aprovacao limpa",
+    body: "Cliente comenta, aprova e pede ajuste sem transformar feedback em print perdido.",
+    accent: "bg-cyan",
   },
   {
-    code: "F.05",
-    title: "Integracoes reais",
-    body: "Conecta ClickUp, Notion, Google Drive, Figma e as APIs das redes sociais. Deixa o KAI no centro, as ferramentas que voce ja usa nos satelites.",
-    spec: "API first",
+    step: "05",
+    title: "Publicacao assistida",
+    body: "Calendario, cadencia, responsaveis e status de cada canal com visao de gargalos.",
+    accent: "bg-violet",
   },
   {
-    code: "F.06",
-    title: "IA que ajuda de verdade",
-    body: "Copys, variacoes, reescrita por tom de voz, sugestoes de hook. Treinada nos materiais do seu cliente. Nao e wrapper de ChatGPT, e camada editorial.",
-    spec: "Brain por cliente",
+    step: "06",
+    title: "Aprendizado continuo",
+    body: "Performance volta para a biblioteca de insights e melhora o proximo ciclo de producao.",
+    accent: "bg-ink",
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="border-b border-ink bg-bone">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-28">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10">
-          <div>
-            <div className="font-mono text-[11px] md:text-xs uppercase tracking-[0.22em] text-muted">
-              / 02 &middot; O que tem dentro
-            </div>
-            <h2 className="headline-kern mt-5 font-black text-5xl md:text-7xl lg:text-8xl">
-              Seis pecas, <span className="serif-italic font-normal">um fluxo.</span>
-            </h2>
-          </div>
-          <p className="max-w-md text-base md:text-lg text-muted">
-            Tudo feito pra responder a pergunta mais chata do dia: &ldquo;e o
-            post das quatro, saiu?&rdquo;
+    <section id="modulos" className="bg-soft py-16 sm:py-20 lg:py-28">
+      <div className="section-shell">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="section-eyebrow">Modulos da fabrica</div>
+          <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+            Cada peca sabe para onde precisa ir.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted">
+            A landing inteira foi pensada como o proprio produto: entradas
+            claras, processamento elegante e saidas prontas para publicar.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink">
-          {FEATURES.map((f) => (
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {FEATURES.map((feature) => (
             <article
-              key={f.code}
-              className="group relative p-6 md:p-8 flex flex-col gap-5 border-r border-b border-ink bg-paper hover:bg-ink hover:text-paper transition-colors"
+              key={feature.step}
+              className="group relative overflow-hidden rounded-[8px] border border-line bg-white p-6 shadow-[0_20px_70px_rgba(38,56,86,0.07)] transition-transform duration-300 hover:-translate-y-1"
             >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted group-hover:text-paper/60">
-                  {f.code}
+              <div
+                className={`absolute left-0 top-0 h-1 w-full ${feature.accent}`}
+                aria-hidden
+              />
+              <div className="flex items-center justify-between gap-4">
+                <span className="font-mono text-xs font-bold text-muted">
+                  {feature.step}
                 </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] border border-current px-2 py-1">
-                  {f.spec}
-                </span>
+                <span className="h-2 w-2 rounded-full bg-current text-line-strong transition-colors group-hover:text-blue" />
               </div>
-              <h3 className="headline-kern text-3xl md:text-4xl font-black">
-                {f.title}
+              <h3 className="mt-8 text-2xl font-semibold leading-tight text-ink">
+                {feature.title}
               </h3>
-              <p className="text-base leading-relaxed opacity-80">{f.body}</p>
-              <div className="mt-auto pt-6 border-t border-current/20 font-mono text-[11px] uppercase tracking-[0.22em] flex items-center justify-between">
-                <span>Saiba mais</span>
-                <span
-                  aria-hidden
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  &rarr;
-                </span>
-              </div>
+              <p className="mt-4 text-base leading-7 text-muted">{feature.body}</p>
             </article>
           ))}
         </div>

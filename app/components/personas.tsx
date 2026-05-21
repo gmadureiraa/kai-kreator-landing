@@ -1,70 +1,56 @@
 const PERSONAS = [
   {
-    id: "01",
-    title: "Agencia in-house",
-    body: "Voce toca 5, 10, 20 marcas ao mesmo tempo e precisa saber em 10 segundos o que esta sendo publicado, onde e por quem. Sem depender da boa vontade da planilha compartilhada.",
-    tag: "Times de ate 30",
+    title: "Agencias com muitas frentes",
+    body: "Visao clara de clientes, canais, status e responsaveis para quem precisa publicar sem virar refem de reuniao de alinhamento.",
+    metric: "20+",
+    label: "marcas em paralelo",
   },
   {
-    id: "02",
-    title: "Creator que virou empresa",
-    body: "Voce ja nao escreve tudo sozinho. Tem ghostwriter, editor, gestor de trafego. Precisa de um lugar pra pauta + aprovacao que nao atrapalhe a criatividade nem vire burocracia.",
-    tag: "Contas pessoais + marcas",
+    title: "Creators que viraram empresa",
+    body: "Um lugar para transformar repertorio, ghostwriting, edicao, design e aprovacao em uma linha de producao leve.",
+    metric: "4x",
+    label: "mais formatos por ideia",
   },
   {
-    id: "03",
-    title: "Gestor de pauta",
-    body: "Voce vive no calendario editorial. Precisa ver capacidade, bottleneck, entregas atrasadas e performance no mesmo lugar. E quer assinar o que aprova.",
-    tag: "Editorial / head de conteudo",
+    title: "Times internos de conteudo",
+    body: "Governanca editorial, biblioteca de aprendizados e analytics para quem precisa provar impacto sem matar a criatividade.",
+    metric: "1",
+    label: "fonte de verdade",
   },
 ];
 
 export function Personas() {
   return (
-    <section id="pra-quem" className="border-b border-ink">
-      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-28">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-10">
+    <section id="pra-quem" className="bg-white py-12 sm:py-14 lg:py-16">
+      <div className="section-shell">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <div className="font-mono text-[11px] md:text-xs uppercase tracking-[0.22em] text-muted">
-              / 01 &middot; Pra quem e
-            </div>
-            <h2 className="headline-kern mt-5 font-black text-5xl md:text-7xl lg:text-8xl">
-              Feito pra quem <span className="serif-italic font-normal">ja tentou</span>
-              <br />
-              resolver na <span className="u-accent">planilha.</span>
+            <div className="section-eyebrow">Para operacoes vivas</div>
+            <h2 className="mt-5 max-w-3xl text-balance text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+              Conteudo deixa de ser tarefa e vira sistema.
             </h2>
           </div>
-          <p className="max-w-md text-base md:text-lg text-muted">
-            A gente construiu o KAI porque nenhuma ferramenta de mercado
-            aguentou o ritmo de uma operacao editorial de verdade. Entao foi
-            mais barato fazer que alugar.
+          <p className="max-w-2xl text-lg leading-8 text-muted lg:justify-self-end">
+            O KAI foi desenhado para o momento em que a marca ja tem volume,
+            dependencias e urgencia demais para operar no improviso.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 border border-ink">
-          {PERSONAS.map((p, i) => (
-            <article
-              key={p.id}
-              className={`relative p-6 md:p-8 flex flex-col gap-5 bg-paper ${
-                i < PERSONAS.length - 1 ? "md:border-r border-ink" : ""
-              } ${i > 0 ? "border-t md:border-t-0 border-ink" : ""}`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
-                  {p.id}
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] bg-ink text-paper px-2 py-1">
-                  {p.tag}
-                </span>
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {PERSONAS.map((persona) => (
+            <article key={persona.title} className="glass-panel p-6 sm:p-7">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="max-w-[13rem] text-2xl font-semibold leading-tight text-ink">
+                  {persona.title}
+                </h3>
+                <div className="text-right">
+                  <div className="text-3xl font-semibold text-ink">{persona.metric}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase text-muted">
+                    {persona.label}
+                  </div>
+                </div>
               </div>
-              <h3 className="headline-kern text-3xl md:text-4xl font-black">
-                {p.title}
-              </h3>
-              <p className="text-base leading-relaxed text-ink/80">{p.body}</p>
-              <div className="mt-auto pt-6 border-t border-ink/20 font-mono text-[11px] uppercase tracking-[0.22em] text-muted flex items-center justify-between">
-                <span>Persona</span>
-                <span aria-hidden>&rarr;</span>
-              </div>
+              <p className="mt-8 text-base leading-7 text-muted">{persona.body}</p>
             </article>
           ))}
         </div>

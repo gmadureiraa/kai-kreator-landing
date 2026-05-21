@@ -1,61 +1,41 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  display: "swap",
-  axes: ["SOFT", "WONK", "opsz"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const siteUrl = "https://kai.kaleidos.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "KAI Kreator — Gestao editorial feita por quem ja produziu de verdade",
+    default: "KAI Kreator - Fabrica editorial para criar conteudo todo dia",
     template: "%s | KAI Kreator",
   },
   description:
-    "Plataforma editorial usada dentro da Kaleidos: pauta, briefings, aprovacoes e analytics num unico lugar. Pensada pra agencias, creators e times de conteudo que precisam entregar todo dia.",
+    "Uma fabrica editorial elegante para transformar ideias, briefings, copys, aprovacoes e analytics em conteudo publicado sem perder o ritmo.",
   applicationName: "KAI Kreator",
   authors: [{ name: "Kaleidos", url: "https://kaleidos.com.br" }],
   keywords: [
+    "fabrica de conteudo",
     "gestao editorial",
     "calendario editorial",
     "produtora de conteudo",
     "agencia de marketing",
     "kaleidos",
     "kai",
-    "briefings",
     "aprovacoes de conteudo",
   ],
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "KAI Kreator",
-    title: "KAI Kreator — Gestao editorial feita pra quem publica todo dia",
+    title: "KAI Kreator - A fabrica editorial da Kaleidos",
     description:
-      "Pauta, briefing, aprovacao e analytics num unico fluxo. A ferramenta que a Kaleidos usa pra tocar dezenas de clientes ao mesmo tempo.",
+      "Ideias entram soltas. O KAI organiza, produz, aprova, publica e aprende com cada resultado.",
     images: [
       {
-        url: "/og.svg",
-        width: 1200,
-        height: 630,
-        alt: "KAI Kreator — Gestao editorial brutalmente eficiente",
+        url: "/assets/content-factory.png",
+        width: 1717,
+        height: 916,
+        alt: "Visual 3D de uma fabrica premium de criacao de conteudo",
       },
     ],
     locale: "pt_BR",
@@ -64,14 +44,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "KAI Kreator",
     description:
-      "Pauta, briefing, aprovacao e analytics num unico fluxo. Usado diariamente pela Kaleidos.",
-    images: ["/og.svg"],
+      "A fabrica editorial para transformar ideias em conteudo publicado.",
+    images: ["/assets/content-factory.png"],
     creator: "@madureira",
   },
   icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
@@ -93,13 +71,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${spaceGrotesk.variable} ${fraunces.variable} ${jetbrainsMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-paper text-ink">
-        {children}
-      </body>
+    <html lang="pt-BR" className="h-full antialiased">
+      <body className="min-h-full bg-paper text-ink">{children}</body>
     </html>
   );
 }
