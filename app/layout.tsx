@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "kai",
     "aprovacoes de conteudo",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
     description:
       "A fabrica editorial para transformar ideias em conteudo publicado.",
     images: ["/assets/content-factory.png"],
-    creator: "@madureira",
+    creator: "@ogmadureira",
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -65,6 +68,23 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "KAI Kreator",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  url: siteUrl,
+  description:
+    "Uma fabrica editorial elegante para transformar ideias, briefings, copys, aprovacoes e analytics em conteudo publicado sem perder o ritmo.",
+  inLanguage: "pt-BR",
+  publisher: {
+    "@type": "Organization",
+    name: "Kaleidos",
+    url: "https://kaleidos.com.br",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,7 +92,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="h-full antialiased">
-      <body className="min-h-full bg-paper text-ink">{children}</body>
+      <body className="min-h-full bg-paper text-ink">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

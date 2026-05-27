@@ -31,12 +31,12 @@ export function Footer() {
               kaleidos.com.br
             </a>
             <a
-              href="https://twitter.com/madureira"
+              href="https://x.com/ogmadureira"
               className="hover:text-ink"
               target="_blank"
               rel="noreferrer noopener"
             >
-              @madureira
+              @ogmadureira
             </a>
           </nav>
         </div>
