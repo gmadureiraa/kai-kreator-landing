@@ -28,28 +28,36 @@ bun run build
 ```
 app/
 ├── components/        # Seções da landing (Hero, Features, Flow, FAQ, etc.)
-├── globals.css        # Design tokens + tipografia + utilitários brutalist
-├── layout.tsx         # Metadata, fonts (Space Grotesk + Fraunces + JetBrains Mono)
+├── globals.css        # Design tokens (CSS vars + @theme Tailwind v4) + utilitários
+├── layout.tsx         # Metadata, JSON-LD, fontes system
 └── page.tsx           # Compõe todas as seções
 
 public/
-├── og.svg             # Open Graph 1200x630
-└── favicon.svg        # Favicon SVG on-brand
+├── assets/content-factory.png  # Open Graph + hero (1717x916)
+└── favicon.svg                 # Favicon SVG on-brand
 ```
 
 ## Design
 
-- **Paleta:** paper `#f5f3ee`, ink `#0a0a0a`, accent (verde ácido) `#c6ff3d`, hot (pink) `#ff3366`
-- **Tipografia:** Space Grotesk (sans), Fraunces (serif italic para destaques), JetBrains Mono (code/labels)
-- **Mood:** editorial brutalist, inspirado no portfólio do Gabriel. Mobile-first.
+- **Paleta:** paper `#ffffff`, ink `#111318`, blue `#1677ff`, cyan `#1fc7d4`, green `#9adf4b`, coral `#ff7a66`
+- **Tipografia:** system sans (SF Pro / Inter) + mono (SF Mono / JetBrains Mono)
+- **Mood:** editorial premium "content operating system", glassmorphism leve. Mobile-first.
+
+## SEO
+
+- `app/sitemap.ts` → `/sitemap.xml`, `app/robots.ts` → `/robots.txt`
+- JSON-LD `SoftwareApplication` + `Organization` no `layout.tsx`
 
 ## Deploy
 
-Ainda não deployado. Gabriel conecta o Vercel manualmente:
+⚠️ **Ainda não deployado.** Não existe projeto Vercel `kai-kreator`.
+O domínio `kai.kaleidos.com.br` já é usado pelo app KAI (projeto `kai-app`),
+então `metadataBase` (hoje aponta pra esse domínio) precisa ser revisto antes de subir.
 
-1. `vercel link` ou importa o repo `gmadureiraa/kai-kreator-landing` na dashboard.
+1. `vercel link` (cria projeto novo) ou importa `gmadureiraa/kai-kreator-landing` na dashboard.
 2. Sem env vars necessárias.
-3. Sugestão de domínio: `kai.kaleidos.com.br` ou `kreator.kaleidos.com.br`.
+3. Definir domínio: sugestão `kreator.kaleidos.com.br` (evita conflito com o app KAI).
+   Atualizar `siteUrl` em `layout.tsx`, `robots.ts` e `sitemap.ts` para o domínio final.
 
 ## Seções
 
