@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://kai.kaleidos.com.br";
+const siteUrl = "https://kreator.kaleidos.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
