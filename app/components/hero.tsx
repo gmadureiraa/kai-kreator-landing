@@ -9,14 +9,27 @@ export function Hero() {
   return (
     <section className="hero-fade relative min-h-[70svh] overflow-hidden bg-white sm:min-h-[74svh] lg:min-h-[76svh]">
       <div className="absolute inset-x-0 bottom-[-3%] top-[36%] sm:top-[28%] lg:top-[18%]">
+        {/* Still fallback (visible without JS / when prefers-reduced-motion). */}
         <Image
           src="/assets/content-factory.webp"
           alt=""
           fill
           priority
           sizes="100vw"
-          quality={80}
+          quality={82}
           className="object-contain object-bottom opacity-95"
+        />
+        {/* Subtle motion loop on top — auto-hidden for users who request reduced motion. */}
+        <video
+          className="absolute inset-0 h-full w-full object-contain object-bottom opacity-95 motion-reduce:hidden"
+          src="/assets/generated/hero-loop.mp4"
+          poster="/assets/content-factory.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden
         />
       </div>
 
