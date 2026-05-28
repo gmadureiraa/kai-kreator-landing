@@ -1,40 +1,31 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 
 /**
- * Captura $pageview a cada navegação do App Router. Sem isso o PostHog só
- * vê o primeiro carregamento. `useSearchParams` precisa de Suspense no
- * Next 16.
+ * Captura $pageview a cada navegação do App Router.
+ *
+ * Evitamos `useSearchParams()` (que força a página inteira a sair de
+ * static prerender e cria fallback 404 chrome no HTML inicial) e lemos
+ * `window.location.search` direto no efeito — só roda no client, então
+ * sem custo SSR e mantém o build 100% estático.
  */
-function PageViewTracker() {
+export function PostHogPageView() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!pathname) return;
-    const search = searchParams?.toString();
-    const url = search ? `${pathname}?${search}` : pathname;
+    if (!pathname || typeof window === "undefined") return;
+    const search = window.location.search || "";
+    const url = `${pathname}${search}`;
     posthog.capture("$pageview", {
-      $current_url:
-        typeof window !== "undefined"
-          ? `${window.location.origin}${url}`
-          : url,
+      $current_url: `${window.location.origin}${url}`,
       $pathname: pathname,
     });
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return null;
-}
-
-export function PostHogPageView() {
-  return (
-    <Suspense fallback={null}>
-      <PageViewTracker />
-    </Suspense>
-  );
 }
 
 export default PostHogPageView;
