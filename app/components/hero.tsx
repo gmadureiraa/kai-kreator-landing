@@ -38,11 +38,18 @@ export function Hero() {
               href={CONTACT_HREF}
               aria-label="Pedir uma demo do KAI Kreator por email"
               className="button-primary"
+              data-cta="hero_primary_demo"
+              data-cta-location="hero"
             >
               Quero ver a fabrica rodando
               <span aria-hidden>&rarr;</span>
             </a>
-            <a href="#fabrica" className="button-secondary">
+            <a
+              href="#fabrica"
+              className="button-secondary"
+              data-cta="hero_secondary_watch_flow"
+              data-cta-location="hero"
+            >
               Assistir o fluxo
               <span aria-hidden>&darr;</span>
             </a>

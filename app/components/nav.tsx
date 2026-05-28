@@ -39,6 +39,8 @@ export function Nav() {
           href={CONTACT_HREF}
           aria-label="Falar com a Kaleidos por email sobre o KAI Kreator"
           className="button-secondary h-10 min-h-10 px-4 text-sm"
+          data-cta="nav_contact"
+          data-cta-location="nav"
         >
           Ver por dentro
           <span aria-hidden>&#8599;</span>

@@ -25,6 +25,8 @@ export function Cta() {
               href={CONTACT_HREF}
               aria-label="Marcar uma conversa por email com a Kaleidos"
               className="button-primary"
+              data-cta="cta_final_primary_demo"
+              data-cta-location="cta-final"
             >
               Marcar uma conversa
               <span aria-hidden>&rarr;</span>
@@ -33,6 +35,8 @@ export function Cta() {
               href="mailto:ola@kaleidos.com.br"
               aria-label="Enviar email para ola@kaleidos.com.br"
               className="button-secondary"
+              data-cta="cta_final_secondary_email"
+              data-cta-location="cta-final"
             >
               ola@kaleidos.com.br
             </a>

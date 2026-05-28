@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { PostHogPageView } from "./components/posthog-page-view";
+import { CtaTracker } from "./components/cta-tracker";
 
 const siteUrl = "https://kreator.kaleidos.com.br";
 
@@ -99,6 +101,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <PostHogPageView />
+        <CtaTracker />
         {children}
       </body>
     </html>

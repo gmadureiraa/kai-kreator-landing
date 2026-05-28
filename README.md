@@ -49,16 +49,30 @@ public/
 - `app/sitemap.ts` → `/sitemap.xml`, `app/robots.ts` → `/robots.txt`
 - JSON-LD `SoftwareApplication` + `Organization` no `layout.tsx`
 
+## Analytics
+
+PostHog ("Kaleidos Group", project token `phc_…`) com proxy `/ingest` pra
+escapar de adblock. Setup:
+
+- `instrumentation-client.ts` — init padrão Kaleidos (`site: "kreator"`).
+- `app/components/posthog-page-view.tsx` — `$pageview` em cada navegação.
+- `app/components/cta-tracker.tsx` — delegate global, captura `cta_click`
+  pra todo elemento com `data-cta="<id>"` + opcional `data-cta-location`.
+- Rewrites em `next.config.ts` mandam `/ingest/*` pro PostHog US.
+- Env var: `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN` (já provisionada na Vercel
+  prod). Local: copiar pra `.env.local`.
+
+CTAs taggados: `hero_primary_demo`, `hero_secondary_watch_flow`,
+`cta_final_primary_demo`, `cta_final_secondary_email`, `nav_contact`.
+
 ## Deploy
 
-⚠️ **Ainda não deployado.** Não existe projeto Vercel `kai-kreator`.
-O domínio `kai.kaleidos.com.br` já é usado pelo app KAI (projeto `kai-app`),
-então `metadataBase` (hoje aponta pra esse domínio) precisa ser revisto antes de subir.
+Projeto Vercel: `kai-kreator` (prj_YGINVk5h7lC569IDUA7vIW2EdCNq).
+Prod: https://kai-kreator.vercel.app (alias `kreator.kaleidos.com.br`
+aguarda DNS Hostinger).
 
-1. `vercel link` (cria projeto novo) ou importa `gmadureiraa/kai-kreator-landing` na dashboard.
-2. Sem env vars necessárias.
-3. Definir domínio: sugestão `kreator.kaleidos.com.br` (evita conflito com o app KAI).
-   Atualizar `siteUrl` em `layout.tsx`, `robots.ts` e `sitemap.ts` para o domínio final.
+1. `git push` dispara deploy automático.
+2. Ou `vercel --prod` da raiz.
 
 ## Seções
 
