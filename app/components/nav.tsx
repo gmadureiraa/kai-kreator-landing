@@ -24,7 +24,10 @@ export function Nav() {
           <span className="text-sm font-semibold text-ink">KAI Kreator</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
+        <nav
+          aria-label="Navegacao principal"
+          className="hidden items-center gap-7 text-sm font-medium text-graphite md:flex"
+        >
           {LINKS.map((link) => (
             <a key={link.href} href={link.href} className="hover:text-ink">
               {link.label}
@@ -32,7 +35,11 @@ export function Nav() {
           ))}
         </nav>
 
-        <a href={CONTACT_HREF} className="button-secondary h-10 min-h-10 px-4 text-sm">
+        <a
+          href={CONTACT_HREF}
+          aria-label="Falar com a Kaleidos por email sobre o KAI Kreator"
+          className="button-secondary h-10 min-h-10 px-4 text-sm"
+        >
           Ver por dentro
           <span aria-hidden>&#8599;</span>
         </a>

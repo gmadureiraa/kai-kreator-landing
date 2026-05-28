@@ -18,7 +18,10 @@ export function Footer() {
             </div>
           </div>
 
-          <nav className="flex flex-wrap items-center gap-5 text-sm font-medium text-muted">
+          <nav
+            aria-label="Links da Kaleidos"
+            className="flex flex-wrap items-center gap-5 text-sm font-medium text-graphite"
+          >
             <a href="mailto:ola@kaleidos.com.br" className="hover:text-ink">
               ola@kaleidos.com.br
             </a>

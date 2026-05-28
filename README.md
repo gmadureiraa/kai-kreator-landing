@@ -33,7 +33,8 @@ app/
 └── page.tsx           # Compõe todas as seções
 
 public/
-├── assets/content-factory.png  # Open Graph + hero (1717x916)
+├── assets/content-factory.webp # Hero (1400x747, ~63KB — servido via next/image)
+├── assets/og.jpg               # Open Graph / Twitter card (1200x630, ~129KB)
 └── favicon.svg                 # Favicon SVG on-brand
 ```
 

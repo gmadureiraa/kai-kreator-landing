@@ -1,5 +1,5 @@
 const CONTACT_HREF =
-  "mailto:ola@kaleidos.com.br?subject=Quero%20conhecer%20o%20KAI%20Kreator&body=Oi%20Kaleidos%2C%20quero%20ver%20o%20KAI%20Kreator%20por%20dentro.";
+  "mailto:ola@kaleidos.com.br?subject=Quero%20uma%20demo%20do%20KAI%20Kreator&body=Oi%20Kaleidos%2C%0A%0AQuero%20ver%20o%20KAI%20Kreator%20por%20dentro.%0A%0AEmpresa%3A%20%0AQuanto%20conteudo%20produzem%20por%20semana%3A%20%0AMaior%20gargalo%20hoje%3A%20";
 
 export function Cta() {
   return (
@@ -21,11 +21,19 @@ export function Cta() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href={CONTACT_HREF} className="button-primary">
+            <a
+              href={CONTACT_HREF}
+              aria-label="Marcar uma conversa por email com a Kaleidos"
+              className="button-primary"
+            >
               Marcar uma conversa
               <span aria-hidden>&rarr;</span>
             </a>
-            <a href="mailto:ola@kaleidos.com.br" className="button-secondary">
+            <a
+              href="mailto:ola@kaleidos.com.br"
+              aria-label="Enviar email para ola@kaleidos.com.br"
+              className="button-secondary"
+            >
               ola@kaleidos.com.br
             </a>
           </div>

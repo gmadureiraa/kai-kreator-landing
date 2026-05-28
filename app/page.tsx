@@ -11,8 +11,11 @@ import { Footer } from "./components/footer";
 export default function Home() {
   return (
     <>
+      <a href="#conteudo" className="skip-link">
+        Pular para o conteudo
+      </a>
       <Nav />
-      <main className="flex-1">
+      <main id="conteudo" className="flex-1">
         <Hero />
         <Personas />
         <Features />

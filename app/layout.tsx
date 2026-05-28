@@ -35,9 +35,9 @@ export const metadata: Metadata = {
       "Ideias entram soltas. O KAI organiza, produz, aprova, publica e aprende com cada resultado.",
     images: [
       {
-        url: "/assets/content-factory.png",
-        width: 1717,
-        height: 916,
+        url: "/assets/og.jpg",
+        width: 1200,
+        height: 630,
         alt: "Visual 3D de uma fabrica premium de criacao de conteudo",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "KAI Kreator",
     description:
       "A fabrica editorial para transformar ideias em conteudo publicado.",
-    images: ["/assets/content-factory.png"],
+    images: ["/assets/og.jpg"],
     creator: "@ogmadureira",
   },
   icons: {
@@ -75,6 +75,7 @@ const jsonLd = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   url: siteUrl,
+  image: `${siteUrl}/assets/og.jpg`,
   description:
     "Uma fabrica editorial elegante para transformar ideias, briefings, copys, aprovacoes e analytics em conteudo publicado sem perder o ritmo.",
   inLanguage: "pt-BR",
@@ -82,6 +83,7 @@ const jsonLd = {
     "@type": "Organization",
     name: "Kaleidos",
     url: "https://kaleidos.com.br",
+    sameAs: ["https://x.com/ogmadureira"],
   },
 };
 

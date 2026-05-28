@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const CONTACT_HREF =
-  "mailto:ola@kaleidos.com.br?subject=Quero%20conhecer%20o%20KAI%20Kreator&body=Oi%20Kaleidos%2C%20quero%20ver%20o%20KAI%20Kreator%20por%20dentro.";
+  "mailto:ola@kaleidos.com.br?subject=Quero%20uma%20demo%20do%20KAI%20Kreator&body=Oi%20Kaleidos%2C%0A%0AQuero%20ver%20o%20KAI%20Kreator%20por%20dentro.%0A%0AEmpresa%3A%20%0AQuanto%20conteudo%20produzem%20por%20semana%3A%20%0AMaior%20gargalo%20hoje%3A%20";
 
 const SIGNALS = ["ideia", "briefing", "copy", "visual", "aprovacao", "analytics"];
 
@@ -10,11 +10,12 @@ export function Hero() {
     <section className="hero-fade relative min-h-[70svh] overflow-hidden bg-white sm:min-h-[74svh] lg:min-h-[76svh]">
       <div className="absolute inset-x-0 bottom-[-3%] top-[36%] sm:top-[28%] lg:top-[18%]">
         <Image
-          src="/assets/content-factory.png"
+          src="/assets/content-factory.webp"
           alt=""
           fill
           priority
           sizes="100vw"
+          quality={80}
           className="object-contain object-bottom opacity-95"
         />
       </div>
@@ -33,8 +34,12 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href={CONTACT_HREF} className="button-primary">
-              Ver a fabrica
+            <a
+              href={CONTACT_HREF}
+              aria-label="Pedir uma demo do KAI Kreator por email"
+              className="button-primary"
+            >
+              Quero ver a fabrica rodando
               <span aria-hidden>&rarr;</span>
             </a>
             <a href="#fabrica" className="button-secondary">
